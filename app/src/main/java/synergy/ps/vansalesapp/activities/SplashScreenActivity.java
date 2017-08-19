@@ -11,7 +11,7 @@ import android.view.MenuItem;
 
 import synergy.ps.vansalesapp.R;
 
-public class SplashScreenActivity extends AppCompatActivity {
+public class SplashScreenActivity extends ParentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
