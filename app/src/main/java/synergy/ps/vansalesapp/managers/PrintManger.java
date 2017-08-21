@@ -1,4 +1,4 @@
-package synergy.ps.vansalesapp.utils;
+package synergy.ps.vansalesapp.managers;
 
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;

@@ -1,8 +1,10 @@
-package synergy.ps.vansalesapp.activities;
+package synergy.ps.vansalesapp.activities.login;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import synergy.ps.vansalesapp.activities.ParentActivity;
 
 public class SplashScreenActivity extends ParentActivity {
     private static int SPLASH_TIME_OUT = 3000;
@@ -26,6 +28,4 @@ public class SplashScreenActivity extends ParentActivity {
             }
         }, SPLASH_TIME_OUT);
     }
-
-
 }
