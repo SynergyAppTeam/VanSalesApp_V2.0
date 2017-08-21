@@ -9,8 +9,6 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import synergy.ps.vansalesapp.R;
 import synergy.ps.vansalesapp.activities.ParentActivity;
-import synergy.ps.vansalesapp.utils.network.BluetoothReceiver;
-import synergy.ps.vansalesapp.managers.PrintManger;
 
 /**
  * A btnLogin screen that offers btnLogin via email/txtPassword.
@@ -36,15 +34,14 @@ public class LoginActivity extends ParentActivity implements View.OnClickListene
     }
 
     public boolean validateLogin() {
-        //FIXME: add texts to string file
         boolean nameData = true;
         boolean passData = true;
         if (txtUsername.getText().toString().trim().length() == 0) {
-            txtUsername.setError("Username is not entered");
+            txtUsername.setError(getString(R.string.login_username_error));
             txtUsername.requestFocus();
             nameData = false;
         } else if (txtPassword.getText().toString().trim().length() == 0) {
-            txtPassword.setError("Password is not entered");
+            txtPassword.setError(getString(R.string.login_password_error));
             txtPassword.requestFocus();
             passData = false;
         }
