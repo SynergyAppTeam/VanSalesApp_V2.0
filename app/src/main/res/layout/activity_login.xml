@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activities.LoginActivity">
+    tools:context=".activities.login.LoginActivity">
 
     <!-- Login progress -->
 
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/username"
+                    android:id="@+id/txtUsername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/username"
@@ -55,12 +55,10 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/txtPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/password"
-                    android:imeActionId="@+id/login"
-
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
@@ -69,7 +67,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/login"
+                android:id="@+id/btnLogin"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,16 +83,6 @@
                 android:id="@+id/loginProgress"
                 android:layout_marginTop="15dp"
                 android:layout_gravity="center_horizontal" />
-
-            <TextView
-                android:id="@+id/language"
-                android:layout_width="wrap_content"
-                android:text="@string/language"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:textColor="@color/colorPrimary"
-                android:layout_height="wrap_content" />
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

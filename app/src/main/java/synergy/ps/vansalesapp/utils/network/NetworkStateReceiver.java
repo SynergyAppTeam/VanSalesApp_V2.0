@@ -1,4 +1,4 @@
-package synergy.ps.vansalesapp.utils;
+package synergy.ps.vansalesapp.utils.network;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
