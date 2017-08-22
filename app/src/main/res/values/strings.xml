@@ -18,7 +18,9 @@
 
     <string name="login_username_error">Username is not entered!</string>
     <string name="login_password_error">Password is not entered</string>
-
+    <string name="licence">Licence</string>
+    <string name="Registration_failed">Empty!!!</string>
+    <string name="Registration_pass">App Registerd</string>
     <string name="username">User Name</string>
     <string name="password">Password</string>
     <string name="login">login</string>
