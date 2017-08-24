@@ -9,14 +9,9 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
-import com.zebra.sdk.comm.BluetoothConnection;
+
 import com.zebra.sdk.comm.Connection;
-import com.zebra.sdk.comm.ConnectionException;
-import com.zebra.sdk.printer.PrinterStatus;
-import com.zebra.sdk.printer.ZebraPrinter;
-import com.zebra.sdk.printer.ZebraPrinterFactory;
-import com.zebra.sdk.printer.ZebraPrinterLanguageUnknownException;
-import com.zebra.sdk.printer.ZebraPrinterLinkOs;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -66,9 +61,9 @@ public class PrintManger {
         }
     }
 
-    public void sendData() {
+    public void sendData(String printText) {
         try {
-            sendData(5);
+            sendData(5,printText);
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(context, "error in connection with printer", Toast.LENGTH_LONG).show();
@@ -76,7 +71,7 @@ public class PrintManger {
 
     }
 
-    public void sendData(int x) throws IOException {
+    public void sendData(int x,String str) throws IOException {
 
 
 
@@ -87,7 +82,6 @@ public class PrintManger {
 
 
             String Artemp =
-
                     "^XA^LRN^CI0^XZ\n" +
                     "^XA^CWZ,E:TT0003M_.FNT^FS^XZ\n" +
                     "^XA\n" +
@@ -95,6 +89,7 @@ public class PrintManger {
                     "^PA1,1,1,1^FS ^FX Enables Advanced Text^FS\n" +
 //                    "^FO210,130^CI28^AZN,20,20^F16^FD" + context.getString(R.string.authorized_dealer) + " 562464156^FS\n" +
                     "^FO210,130^CI28^AZN,20,20^F16^FD" +"VanSalesApp V2.0" + "^FS\n" +
+                    "^FO245,230^CI28^AZN,20,20^F16^FD" +str+ "^FS\n" +
 
                     "^FO20,310^CI28^AZN,20,20^F16^FD-----------------------------------------------------------------------------------------------------------------^FS\n";
 

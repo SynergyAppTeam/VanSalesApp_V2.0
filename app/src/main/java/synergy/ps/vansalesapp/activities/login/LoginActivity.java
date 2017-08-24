@@ -10,6 +10,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import synergy.ps.vansalesapp.R;
 import synergy.ps.vansalesapp.activities.ParentActivity;
+import synergy.ps.vansalesapp.managers.PrintManger;
 
 /**
  * A btnLogin screen that offers btnLogin via email/txtPassword.
@@ -29,7 +30,8 @@ public class LoginActivity extends ParentActivity implements View.OnClickListene
         setContentView(R.layout.activity_login);
         // get views
         ButterKnife.inject(this);
-
+        PrintManger printManager=new PrintManger(getApplicationContext());
+        printManager.findBT();
         // add events
         btnLogin.setOnClickListener(this);
     }
@@ -57,10 +59,11 @@ public class LoginActivity extends ParentActivity implements View.OnClickListene
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.btnLogin) {
-
-            Intent intent = new Intent(getApplicationContext(),LicenceActivity.class);
-            startActivity(intent);
-            //perform login
+            if(validateLogin()) {
+                Intent intent = new Intent(getApplicationContext(), LicenceActivity.class);
+                startActivity(intent);
+                //perform login
+            }
         }
     }
 }

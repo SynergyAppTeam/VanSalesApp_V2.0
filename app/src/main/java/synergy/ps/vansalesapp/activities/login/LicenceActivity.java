@@ -11,6 +11,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import synergy.ps.vansalesapp.R;
 import synergy.ps.vansalesapp.activities.ParentActivity;
+import synergy.ps.vansalesapp.managers.PrintManger;
 
 /**
  * Created by HP on 8/22/2017.
@@ -27,6 +28,7 @@ public class LicenceActivity extends ParentActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_licence);
          ButterKnife.inject(this);
+
          btnRegister.setOnClickListener(this);
     }
 
@@ -44,6 +46,8 @@ public class LicenceActivity extends ParentActivity implements View.OnClickListe
         else
         {
             text=getString(R.string.Registration_pass);
+            PrintManger printManger = new PrintManger(getApplication());
+            printManger.sendData(txtLicence.getText().toString());
         }
         Toast toast=Toast.makeText(context, text, duration);
         toast.show();
